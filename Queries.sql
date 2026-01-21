@@ -28,11 +28,9 @@ LEFT JOIN Employees e
 ON d.DeptID=e.DeptID
 WHERE e.EmpID IS NULL;
 
-SELECT d.DeptName,AVG(e.Salary) AS AvgSalary
-FROM Employees e
-INNER JOIN Departments d
-ON e.DeptID=d.DeptID
-GROUP BY d.DeptName;
+SELECT DeptID,AVG(Salary) AS AvgSal
+FROM Employees 
+GROUP BY DeptID;
 
 SELECT DeptID,COUNT(*) AS TotalEmployees
 FROM Employees
